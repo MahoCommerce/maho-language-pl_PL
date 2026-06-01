@@ -23,24 +23,24 @@
                 <tr>
                     <td class="action-content">
                         <h1>{{htmlescape var=$customer.name}},</h1>
-                        <p>Your email {{var customer.email}} must be confirmed before using it to log in to our store.</p>
+                        <p>Twój e-mail {{var customer.email}} musi zostać potwierdzony przed użyciem go, aby zalogować się do naszego sklepu.</p>
                         <p class="highlighted-text">
-                            Use the following values when prompted to log in:<br/>
-                            <strong>Email:</strong> {{var customer.email}}<br/>
-                            <strong>Password</strong>: (the password you set when creating your account)
+                            Użyj następujących wartości, gdy zostaniesz poproszony o logowanie się:<br>
+                            <strong>Email:</strong> {{var customer.email}}<br>
+                            <strong>Hasło</strong>(hasło ustawione podczas tworzenia konta)
                         </p>
-                        <p>Click here to confirm your email and instantly log in (the link is valid only once):</p>
+                        <p>Kliknij tutaj, aby potwierdzić swój adres e-mail i natychmiast zalogować się (link jest ważny tylko raz):</p>
                         <table cellspacing="0" cellpadding="0" class="action-button" >
                             <tr>
                                 <td>
-                                    <a href="{{store url="customer/account/confirm/" _query_id=$customer.id _query_key=$customer.confirmation _query_back_url=$back_url}}"><span>Confirm Account</span></a>
+                                    <a href="{{store url=&quot;customer/account/confirm/&quot; _query_id=$customer.id _query_key=$customer.confirm_query_back_url=$back_url}}"><span>Potwierdź konto</span></a>
                                 </td>
                             </tr>
                         </table>
                         <p>
-                            If you have any questions, please feel free to contact us at
+                            W razie jakichkolwiek pytań, skontaktuj się z nami pod adresem
                             <a href="mailto:{{var store_email}}">{{var store_email}}</a>
-                            {{depend store_phone}} or by phone at <a href="tel:{{var phone}}">{{var store_phone}}</a>{{/depend}}.
+                            {{depend store_phone}} lub telefonicznie pod adresem <a href="tel:{{var phone}}">{{var store_phone}}</a>{{/depend}}.
                         </p>
                     </td>
                 </tr>
